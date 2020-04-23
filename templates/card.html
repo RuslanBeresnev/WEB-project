@@ -1,0 +1,21 @@
+{% extends "main_page.html" %}
+
+{% block card %}
+    {% for _ in range(2) %}
+        <div class="row">
+            {% for _ in range(4) %}
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem; margin: 35px; border: 3px solid dimgray; border-radius: 10px">
+                        <img src="static/images/3 ели в Detventure.jpg" class="card-img-top"
+                             alt="Попробуйте перезагрузить страницу">
+                        <div class="card-body">
+                            <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
+                            <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
+                            <a href="#" class="btn btn-primary">Изучить</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
