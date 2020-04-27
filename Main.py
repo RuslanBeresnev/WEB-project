@@ -11,17 +11,17 @@ def start():
 
 @app.route('/main_page')
 def load_main_page():
-    return render_template('main_page.html')
+    return render_template('main_page.html', page_title='Главная страница')
 
 
 @app.route('/registration')
 def load_registration_form():
-    return render_template('registration_form.html', user_authorised=True)
+    return render_template('registration_form.html', user_authorised=True, page_title='Регистрация')
 
 
 @app.route('/login')
 def login_to_account():
-    return render_template('login_form.html', user_authorised=True)
+    return render_template('login_form.html', user_authorised=True, page_title='Авторизация')
 
 
 if __name__ == '__main__':
