@@ -1,128 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-</head>
+{% extends "template.html" %}
 
-<body background="static/images/Туманность.jpg" style="background-size: cover">
-    <div class="container-fluid">
-        <div class="row navbar navbar-dark bg-dark">
-            <div class="col-md-12" style="text-align: center">
-                <a class="navbar-brand"
-                   style="font-size: 36px; border: 1px solid blue; padding-left: 15px; padding-right: 15px">
-                    Ps
-                </a>
-                <a class="navbar-brand" style="font-size: 36px">
-                    Туториалы по Adobe Photoshop
-                </a>
-            </div>
-        </div>
+{% block main_page %}
+    {% for _ in range(2) %}
         <div class="row">
+            {% for _ in range(4) %}
             <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
+                <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                    <img src="static/images/Превью карточки.jpg" class="card-img-top"
                          alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
+                    <div class="card-body" style="color: white">
                         <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
                         <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
+                        <a href="#" class="btn btn-outline-warning">Изучить</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem; margin: 35px; border: 2px solid darkorange; border-radius: 10px">
-                    <img src="static/images/Ночной фон с озером и горами + красная арка.jpg" class="card-img-top"
-                         alt="Попробуйте перезагрузить страницу">
-                    <div class="card-body">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="#" class="btn btn-primary">Изучить</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    {% endfor %}
+{% endblock %}

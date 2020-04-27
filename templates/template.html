@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/form.css">
+</head>
+
+<body background="static/images/Фон сайта.jpg" style="background-size: cover">
+<div class="container-fluid">
+    <div class="row navbar navbar-dark" style="background-color: #202020; padding-bottom: 1.75%">
+        {% if not user_authorised %}
+            <div class="col-md-12">
+        {% else %}
+            <div class="col-md-12" style="margin-bottom: -1.1%">
+        {% endif %}
+            <div class="d-flex justify-content-center">
+                <a class="navbar-brand"
+                   style="font-size: 46px; border: 2px solid blue; padding-left: 18px; padding-right: 18px">Ps</a>
+                <a class="navbar-brand" style="font: 50px courier_new; margin-top: 0.5%">Туториалы по Adobe
+                    Photoshop</a>
+            </div>
+            {% if not user_authorised %}
+                <div class="d-flex justify-content-end" style="margin-top: -4%">
+                    <a href="/login" class="btn btn-outline-primary" style="font-size: 20px">Войти</a>
+                    <a href="/registration" class="btn btn-outline-primary" style="margin-left: 0.5%; font-size: 20px">
+                        Регистрация</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% block main_page %}{% endblock %}
+</div>
+{% block registration_form %}{% endblock %}
+{% block login_form %}{% endblock %}
+</body>
+</html>

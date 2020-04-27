@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+
+{% block login_form %}
+    {% set user_authorised = user_authorised %}
+    <form class="form">
+        <h1 style="text-align: center">Вход в аккаунт</h1>
+        <div class="form-group">
+            <label for="NicknameInput">Никнейм</label>
+            <input type="text" class="form-control" id="NicknameInput" style="font-size: 20px">
+        </div>
+        <div class="form-group">
+            <label for="PasswordInput">Пароль</label>
+            <input type="password" class="form-control" id="PasswordInput" style="font-size: 20px">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-success" style="font-size: 20px">Войти</button>
+    </form>
+{% endblock %}
