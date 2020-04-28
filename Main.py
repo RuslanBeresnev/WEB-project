@@ -24,5 +24,10 @@ def login_to_account():
     return render_template('login_form.html', user_authorised=True, page_title='Авторизация')
 
 
+@app.route('/tutorials')
+def load_content_page():
+    return render_template('content_page.html', page_title='Туториалы')
+
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080)
