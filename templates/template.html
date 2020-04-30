@@ -25,8 +25,16 @@
     <body style="background-color: #101010">
 {% endif %}
 <div class="container-fluid">
-    <div class="row navbar navbar-dark" style="background-color: #202020; padding-bottom: 1.75%">
-        {% if not user_authorised %}
+    {% if not current_user.is_authenticated %}
+        {% if page_title != 'Регистрация' and page_title != 'Авторизация' %}
+            <div class="row navbar navbar-dark" style="background-color: #202020; padding-bottom: 1.75%">
+        {% else %}
+            <div class="row navbar navbar-dark" style="background-color: #202020; padding-bottom: 0.65%">
+        {% endif %}
+    {% else %}
+        <div class="row navbar navbar-dark" style="background-color: #202020; padding-bottom: 2.75%">
+    {% endif %}
+        {% if not current_user.is_authenticated %}
             <div class="col-md-12">
         {% else %}
             <div class="col-md-12" style="margin-bottom: -1.1%">
@@ -37,14 +45,30 @@
                 <a class="navbar-brand" style="font: 50px courier_new; margin-top: 0.5%">Туториалы по Adobe
                     Photoshop</a>
             </div>
-            {% if not user_authorised %}
-                <div class="d-flex justify-content-end" style="margin-top: -4%">
-                    <a href="/login" class="btn btn-outline-primary" style="font-size: 20px">Войти</a>
-                    <a href="/registration" class="btn btn-outline-primary" style="margin-left: 0.5%; font-size: 20px">
-                        Регистрация</a>
+            {% if not current_user.is_authenticated %}
+                {% if page_title != 'Регистрация' and page_title != 'Авторизация' %}
+                    <div class="d-flex justify-content-end" style="margin-top: -4%">
+                        <a href="/authorization" class="btn btn-outline-primary" style="font-size: 20px">Войти</a>
+                        <a href="/registration" class="btn btn-outline-primary" style="margin-left: 0.5%; font-size: 20px">
+                            Регистрация</a>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="d-flex justify-content-end" style="margin-top: -4.1%">
+                    <a class="navbar-brand" style="font-size: 25px">{{ current_user.name }}</a>
+                    <a href="/logout" class="btn btn-outline-danger" style="margin-left: 0.5%; font-size: 20px">
+                        Выйти</a>
+                </div>
+            {% endif %}
+            {% if page_title == 'Туториалы' %}
+                <div class="d-flex justify-content-start" style="margin-top: -2.85%">
+                    <a href="/main_page" class="btn btn-outline-warning" style="margin-left: 0.5%; font-size: 20px">
+                        На главную</a>
                 </div>
             {% endif %}
         </div>
+        </div>
+    </div>
     </div>
     {% block main_page %}{% endblock %}
 </div>

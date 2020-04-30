@@ -1,21 +1,169 @@
 {% extends "template.html" %}
 
 {% block main_page %}
-    {% for _ in range(2) %}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card blocked" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                <img src="static/images/Превью карточки 1.jpg" class="card-img-top"
+                     alt="Попробуйте перезагрузить страницу">
+                <div class="card-body" style="color: white">
+                    <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
+                    <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
+                    <a href="/tutorials/1" class="btn btn-outline-warning">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                <img src="static/images/Превью карточки 2.jpg" class="card-img-top"
+                     alt="Попробуйте перезагрузить страницу">
+                <div class="card-body" style="color: white">
+                    <h5 class="card-title">Выделение объекта</h5>
+                    <p>Способы выделения объктов. Сглаживание краёв. Применение слоёв-масок.</p>
+                    <br>
+                    <a href="/tutorials/2" class="btn btn-outline-warning">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                <img src="static/images/Превью карточки 3.jpg" class="card-img-top"
+                     alt="Попробуйте перезагрузить страницу">
+                <div class="card-body" style="color: white">
+                    <h5 class="card-title">Цветокоррекция фотографий</h5>
+                    <p>Изменение цвета фотографии. Корректирующие фильтры. Работа со светом и тенью.</p>
+                    <br>
+                    <a href="/tutorials/3" class="btn btn-outline-warning">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                <img src="static/images/Превью карточки 4.jpg" class="card-img-top"
+                     alt="Попробуйте перезагрузить страницу">
+                <div class="card-body" style="color: white">
+                    <h5 class="card-title">Работа с тенями</h5>
+                    <p>Прорисовка теней. Углы отбрасывания. Способы создания.</p>
+                    <br><br>
+                    <a href="/tutorials/4" class="btn btn-outline-warning">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if current_user.is_authenticated %}
         <div class="row">
-            {% for _ in range(4) %}
             <div class="col-md-3">
                 <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
-                    <img src="static/images/Превью карточки.jpg" class="card-img-top"
+                    <img src="static/images/Превью карточки 5.jpg" class="card-img-top"
                          alt="Попробуйте перезагрузить страницу">
                     <div class="card-body" style="color: white">
-                        <h5 class="card-title">Основы работы в Adobe Photoshop</h5>
-                        <p>Начало работы в фотошопе. Изучение панели инструментов. Базовые функции.</p>
-                        <a href="/tutorials" class="btn btn-outline-warning">Изучить</a>
+                        <h5 class="card-title">Работа со светом</h5>
+                        <p>Прорисовка света. Контурный свет. Применение кистей, прозрачности, эффектов наложения.</p>
+                        <br>
+                        <a href="/tutorials/5" class="btn btn-outline-warning">Посмотреть</a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            <div class="col-md-3">
+                <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                    <img src="static/images/Превью карточки 6.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title">Наложение текстуры на объект</h5>
+                        <p>Изменение внешнего вида объектов. Работа с выделением. Работа со смарт-объектами.</p>
+                        <a href="/tutorials/6" class="btn btn-outline-warning">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                    <img src="static/images/Превью карточки 7.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title">Различные эффекты</h5>
+                        <p>Глитч эффект. Эффект огня. Эффект дыма.</p>
+                        <br><br>
+                        <a href="/tutorials/7" class="btn btn-outline-warning">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 90%; margin: 8% 4% 8%; background-color: #202020">
+                    <img src="static/images/Превью карточки 8.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title">Интересные фишки в Adobe Photoshop</h5>
+                        <p>Горячие клавиши. Быстрое выделение. Необычные инструменты.</p>
+                        <br>
+                        <a href="/tutorials/8" class="btn btn-outline-warning">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    {% else %}
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card"
+                     style="width: 90%; margin: 8% 4% 8%; background-color: #101010; border: 1px solid darkred">
+                    <img src="static/images/Превью карточки 5.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу" style="opacity: 50%">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title" style="color: dimgray">Работа со светом</h5>
+                        <p style="color: dimgray">Прорисовка света. Контурный свет. Применение кистей, прозрачности,
+                            эффектов наложения.</p>
+                        <br>
+                        <a class="btn btn-outline-danger disabled">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card"
+                     style="width: 90%; margin: 8% 4% 8%; background-color: #101010; border: 1px solid darkred">
+                    <img src="static/images/Превью карточки 6.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу" style="opacity: 50%">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title" style="color: dimgray">Наложение текстуры на объект</h5>
+                        <p style="color: dimgray">Изменение внешнего вида объектов. Работа с выделением. Работа со
+                            смарт-объектами.</p>
+                        <a class="btn btn-outline-danger disabled">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card"
+                     style="width: 90%; margin: 8% 4% 8%; background-color: #101010; border: 1px solid darkred">
+                    <img src="static/images/Превью карточки 7.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу" style="opacity: 50%">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title" style="color: dimgray">Различные эффекты</h5>
+                        <p style="color: dimgray">Глитч эффект. Эффект огня. Эффект дыма.</p>
+                        <br><br>
+                        <a class="btn btn-outline-danger disabled">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card"
+                     style="width: 90%; margin: 8% 4% 8%; background-color: #101010; border: 1px solid darkred">
+                    <img src="static/images/Превью карточки 8.jpg" class="card-img-top"
+                         alt="Попробуйте перезагрузить страницу" style="opacity: 50%">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title" style="color: dimgray">Интересные фишки в Adobe Photoshop</h5>
+                        <p style="color: dimgray">Горячие клавиши. Быстрое выделение. Необычные инструменты.</p>
+                        <br>
+                        <a class="btn btn-outline-danger disabled">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="error_message" style="
+                font: 30px courier_new;
+                text-align: center;
+                margin: 2% 20%;
+                border: 2px solid red;
+                border-radius: 15px;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                ">Войдите в учётную запись, чтобы посмотреть эти туториалы</p>
+    {% endif %}
 {% endblock %}

@@ -1,19 +1,25 @@
 {% extends "template.html" %}
 
 {% block login_form %}
-    {% set user_authorised = user_authorised %}
     {% set page_title = page_title %}
-    <form class="form">
+    <form class="form" method="post">
         <h1 style="text-align: center">Вход в аккаунт</h1>
         <div class="form-group">
-            <label for="NicknameInput">Никнейм</label>
-            <input type="text" class="form-control" id="NicknameInput" style="font-size: 20px">
+            <label for="EmailInput">Адрес электронной почты</label>
+            <input type="email" class="form-control" id="EmailInput" name="email" style="font-size: 20px">
         </div>
         <div class="form-group">
             <label for="PasswordInput">Пароль</label>
-            <input type="password" class="form-control" id="PasswordInput" style="font-size: 20px">
+            <input type="password" class="form-control" id="PasswordInput" name="password" style="font-size: 20px">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="RememberMeCheckBox" name="remember_me"
+                   style="width: 20px; height: 20px; margin-top: 12px">
+            <label class="form-check-label" for="RememberMeCheckBox" style="margin-left: 10px; font-size: 20px">
+                   Запомнить меня</label>
         </div>
         <br>
-        <button type="submit" class="btn btn-outline-success" style="font-size: 20px">Войти</button>
+        <p class="error_message">{{ error_message }}</p>
+        <button type="submit" class="btn btn-outline-success" name="login_button" style="font-size: 20px">Войти</button>
     </form>
 {% endblock %}

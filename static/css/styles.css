@@ -10,3 +10,8 @@ form.form {
     padding: 20px;
     font-size: 25px;
 }
+
+.error_message {
+    font-size: 18px;
+    color: red;
+}
